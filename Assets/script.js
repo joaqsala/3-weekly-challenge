@@ -3,7 +3,6 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  console.log("This works");
   let password = generatePassword();  
   let passwordText = document.querySelector("#password");
 
@@ -13,30 +12,30 @@ function writePassword() {
 }
 
 function generatePassword() {
-  let numPass = parseInt(prompt("Enter a number of characters between 8-128 to use in your password"));
+  let numPass = parseInt(prompt("How many characters do you want in your password? Enter a number between 8-128."));
       if ( numPass < 8 || numPass > 128 || isNaN(numPass)) {
         alert("The value you entered is not between 8-128.");
         return;
       }
   
-  var lowCase = confirm("Do you want to include lowercase letters in your password?");
-  var uppCase = confirm("Do you want to include uppercase letters in your password?");
-  var numCase = confirm("Do you want to include numbers in your password?");
-  var spec = confirm("Do you want to include special characters in your password?");
+  const lowCase = confirm("Do you want to include lowercase letters in your password?");
+  const uppCase = confirm("Do you want to include uppercase letters in your password?");
+  const numCase = confirm("Do you want to include numbers in your password?");
+  const spec = confirm("Do you want to include special characters in your password?");
 
-    while(lowCase ===false && uppCase ===false && numCase === false && specials === false) {
+    while(lowCase === false && uppCase === false && numCase === false && spec === false) {
       alert("You must select at least 1 type of criteria to generate a password.");
-      var lowCase = confirm("Do you want to include lowercase letters in your password?");
-      var uppCase = confirm("Do you want to include uppercase letters in your password?");
-      var numCase = confirm("Do you want to include numbers in your password?");
-      var spec = confirm("Do you want to include special characters in your password?");
+      const lowCase = confirm("Do you want to include lowercase letters in your password?");
+      const uppCase = confirm("Do you want to include uppercase letters in your password?");
+      const numCase = confirm("Do you want to include numbers in your password?");
+      const spec = confirm("Do you want to include special characters in your password?");
     };
 
-    var optionsArray = [];
-    var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
-    var upperCase = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
-    var numbers = "1234567890".split("");
-    var specials = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
+    const optionsArray = [];
+    const lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
+    const upperCase = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+    const numbers = "1234567890".split("");
+    const specials = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
   
     if(lowCase){
       optionsArray = optionsArray.concat(lowerCase);
@@ -74,8 +73,8 @@ function generatePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-// //uplong click of 'generate a password' button, a series of prompts for password criteria begins
-// // when propmpted for passward criteria, user selects which criteria to include
+// add a series of prompts for password criteria
+// when propmpted for passward criteria, user selects which criteria to include
 
 // Start with an alert or display stating that strong passwords include certain criteria
 // Press Ok to continue
