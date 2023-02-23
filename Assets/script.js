@@ -3,39 +3,38 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  let password = generatePassword();  
-  let passwordText = document.querySelector("#password");
-
+  var password = generatePassword();  
+  var passwordText = document.querySelector("#password");
   passwordText.value = password;
   
- 
+
 }
 
 function generatePassword() {
-  let numPass = parseInt(prompt("How many characters do you want in your password? Enter a number between 8-128."));
+  var numPass = parseInt(prompt("How many characters do you want in your password? Enter a number between 8-128."));
       if ( numPass < 8 || numPass > 128 || isNaN(numPass)) {
         alert("The value you entered is not between 8-128.");
         return;
       }
   
-  const lowCase = confirm("Do you want to include lowercase letters in your password?");
-  const uppCase = confirm("Do you want to include uppercase letters in your password?");
-  const numCase = confirm("Do you want to include numbers in your password?");
-  const spec = confirm("Do you want to include special characters in your password?");
+  var lowCase = confirm("Do you want to include lowercase letters in your password?");
+  var uppCase = confirm("Do you want to include uppercase letters in your password?");
+  var numCase = confirm("Do you want to include numbers in your password?");
+  var spec = confirm("Do you want to include special characters in your password?");
 
     while(lowCase === false && uppCase === false && numCase === false && spec === false) {
       alert("You must select at least 1 type of criteria to generate a password.");
-      const lowCase = confirm("Do you want to include lowercase letters in your password?");
-      const uppCase = confirm("Do you want to include uppercase letters in your password?");
-      const numCase = confirm("Do you want to include numbers in your password?");
-      const spec = confirm("Do you want to include special characters in your password?");
+      var lowCase = confirm("Do you want to include lowercase letters in your password?");
+      var uppCase = confirm("Do you want to include uppercase letters in your password?");
+      var numCase = confirm("Do you want to include numbers in your password?");
+      var spec = confirm("Do you want to include special characters in your password?");
     };
 
-    const optionsArray = [];
-    const lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
-    const upperCase = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
-    const numbers = "1234567890".split("");
-    const specials = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
+    var optionsArray = [];
+    var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
+    var upperCase = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+    var numbers = "1234567890".split("");
+    var specials = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
   
     if(lowCase){
       optionsArray = optionsArray.concat(lowerCase);
@@ -51,17 +50,16 @@ function generatePassword() {
     }
   
   
-    let randomIndex = [];
+    var randomIndex = [];
     
-    let i = 1;
+    var i = 1;
     while (i <= numPass){
      
-    let indexNum = Math.floor(Math.random()*optionsArray.length);
+    var indexNum = Math.floor(Math.random()*optionsArray.length);
       randomIndex.push(optionsArray[indexNum]);
       i++;
     }
-
-    return password = randomIndex.join("");
+    return randomIndex.join("");
 }
 
 
