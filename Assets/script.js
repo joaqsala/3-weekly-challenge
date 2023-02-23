@@ -13,7 +13,7 @@ function writePassword() {
 }
 
 function generatePassword() {
-  let numPass = parseInt(prompt("Enter a number between 8-128 to use in your password"));
+  let numPass = parseInt(prompt("Enter a number of characters between 8-128 to use in your password"));
       if ( numPass < 8 || numPass > 128 || isNaN(numPass)) {
         alert("The value you entered is not between 8-128.");
         return;
@@ -51,7 +51,18 @@ function generatePassword() {
       optionsArray = optionsArray.concat(specials);
     }
   
- 
+  
+    let randomIndex = [];
+    
+    let i = 1;
+    while (i <= numPass){
+     
+    let indexNum = Math.floor(Math.random()*optionsArray.length);
+      randomIndex.push(optionsArray[indexNum]);
+      i++;
+    }
+
+    return password = randomIndex.join("");
 }
 
 
