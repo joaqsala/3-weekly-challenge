@@ -22,17 +22,36 @@ function generatePassword() {
   var lowCase = confirm("Do you want to include lowercase letters in your password?");
   var uppCase = confirm("Do you want to include uppercase letters in your password?");
   var numCase = confirm("Do you want to include numbers in your password?");
-  var specials = confirm("Do you want to include special characters in your password?");
+  var spec = confirm("Do you want to include special characters in your password?");
 
     while(lowCase ===false && uppCase ===false && numCase === false && specials === false) {
-      alert("You must select at least 1 type of criteria to generate a password.")
+      alert("You must select at least 1 type of criteria to generate a password.");
       var lowCase = confirm("Do you want to include lowercase letters in your password?");
       var uppCase = confirm("Do you want to include uppercase letters in your password?");
       var numCase = confirm("Do you want to include numbers in your password?");
       var spec = confirm("Do you want to include special characters in your password?");
     };
 
+    var optionsArray = [];
+    var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
+    var upperCase = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
+    var numbers = "1234567890".split("");
+    var specials = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
   
+    if(lowCase){
+      optionsArray = optionsArray.concat(lowerCase);
+    }
+    if(uppCase){
+      optionsArray = optionsArray.concat(upperCase);
+    }
+    if(numCase){
+      optionsArray = optionsArray.concat(numbers);
+    }
+    if(spec){
+      optionsArray = optionsArray.concat(specials);
+    }
+  
+ 
 }
 
 
