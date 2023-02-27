@@ -56,7 +56,7 @@ function generatePassword() {
   //creates empty array to store the password
     var randomIndexArray = [];
 
-  //creates a while loop to add the correct number of characters into randomIndex
+  //creates a while loop to add the correct number of characters into randomIndex array
     var i = 1;
     while (i <= numPass){
      
