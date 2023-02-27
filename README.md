@@ -10,6 +10,7 @@ This repository contains the files for a random password generator. Using Javasc
 ![text box with a generate passord button](Assets/Images/password-generator-image.png)
 
 https://joaqsala.github.io/3-weekly-challenge/
+
 This webpage generates a random password for the user. Once the user starts the process, prompts ask the user to choose a character length for their password and then confirms whether they want to use lowercase letters, uppercase letters, numbers, and/or special characters. Once the user answers these questions, their random password is generated. 
 
 ## Credits
